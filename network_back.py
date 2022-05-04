@@ -49,7 +49,7 @@ def summarize_cat(col_name):
 for col in non_num_cols:
     print(f"Summary of {col} column : ")
     df = summarize_cat(col)
-    df.to_csv(f"Summary_of_{col}_column.csv")
+    df.to_csv(f"./analysis/Summary_of_{col}_column.csv")
     print('\n')
 
 
@@ -79,5 +79,5 @@ for col in non_num_cols:
 # plt.figure(3, figsize=(20, 12))
 # nx.draw_networkx_nodes(N, pos, node_size=degrees)
 # nx.draw_networkx_edges(N, pos, alpha=0.005)
-# # plt.savefig("Graph.png", format="PNG")
+# # plt.savefig("./analysis/Graph.png", format="PNG")
 # plt.show()

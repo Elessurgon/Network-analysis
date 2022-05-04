@@ -75,21 +75,21 @@ st.markdown("""<hr>""",
 
 # proportions of values in non numeric
 
-all_files = os.listdir("./")
+all_files = os.listdir("./analysis")
 csv_files = list(filter(lambda f: f.endswith('.csv'), all_files))
 
 for col in csv_files:
     st.write(f"Summary of {col} column")
-    df = pd.read_csv(col)
+    df = pd.read_csv("./analysis/" + col)
     st.dataframe(df)
     print('\n')
 
 # histogram
-st.image("./hist.png")
+st.image("./analysis/hist.png")
 
 # # correlation matrix
 
-st.image("./correlation_matrix.png")
+st.image("./analysis/correlation_matrix.png")
 
 # Network Graph
-st.image("./Graph (3).png", caption="Kamada Kawai Graph model")
+st.image("./analysis/Graph (3).png", caption="Kamada Kawai Graph model")
