@@ -10,7 +10,7 @@ import streamlit as st
 import base64
 import pandas as pd
 
-st.set_page_config(page_title='DFDC', layout='wide',
+st.set_page_config(page_title='Network analysis', layout='wide',
                    initial_sidebar_state='auto')
 
 st.markdown(
