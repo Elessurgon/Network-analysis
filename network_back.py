@@ -54,30 +54,30 @@ for col in non_num_cols:
 
 
 # histogram
-# cols_for_hist = [col for col in num_cols if data[col].nunique() <= 50]
-# data[cols_for_hist].hist(layout=(7, 3), figsize=(12, 20))
-# plt.tight_layout()
+cols_for_hist = [col for col in num_cols if data[col].nunique() <= 50]
+data[cols_for_hist].hist(layout=(7, 3), figsize=(12, 20))
+plt.tight_layout()
 
 # # correlation matrix
-# corr = data[num_cols].corr()
-# f = plt.figure(figsize=(25, 25))
-# plt.matshow(corr, fignum=f.number)
-# plt.title('Correlation Matrix of Numeric columns in the dataset', fontsize=20)
-# plt.xticks(range(len(num_cols)), num_cols, fontsize=14, rotation=90)
-# plt.yticks(range(len(num_cols)), num_cols, fontsize=14)
-# plt.gca().xaxis.set_ticks_position('bottom')
-# cb = plt.colorbar(fraction=0.0466, pad=0.02)
-# cb.ax.tick_params(labelsize=10)
-# plt.show()
+corr = data[num_cols].corr()
+f = plt.figure(figsize=(25, 25))
+plt.matshow(corr, fignum=f.number)
+plt.title('Correlation Matrix of Numeric columns in the dataset', fontsize=20)
+plt.xticks(range(len(num_cols)), num_cols, fontsize=14, rotation=90)
+plt.yticks(range(len(num_cols)), num_cols, fontsize=14)
+plt.gca().xaxis.set_ticks_position('bottom')
+cb = plt.colorbar(fraction=0.0466, pad=0.02)
+cb.ax.tick_params(labelsize=10)
+plt.show()
 
 
 # network graph
-# N = nx.from_pandas_edgelist(
-#     data, source='Source.IP', target='Destination.IP', edge_attr=None)
-# degrees = [N.degree[node] for node in N.nodes()]
-# pos = nx.random_layout(N)
-# plt.figure(3, figsize=(20, 12))
-# nx.draw_networkx_nodes(N, pos, node_size=degrees)
-# nx.draw_networkx_edges(N, pos, alpha=0.005)
-# # plt.savefig("./analysis/Graph.png", format="PNG")
-# plt.show()
+N = nx.from_pandas_edgelist(
+    data, source='Source.IP', target='Destination.IP', edge_attr=None)
+degrees = [N.degree[node] for node in N.nodes()]
+pos = nx.random_layout(N)
+plt.figure(3, figsize=(20, 12))
+nx.draw_networkx_nodes(N, pos, node_size=degrees)
+nx.draw_networkx_edges(N, pos, alpha=0.005)
+plt.savefig("./analysis/Graph.png", format="PNG")
+plt.show()

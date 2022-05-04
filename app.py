@@ -51,6 +51,16 @@ st.markdown(
         text-align: justify;
         color: black;
     }
+    .stDataFrame {
+        background-color: #71458c;
+    }
+
+    .css-v37k9u {
+        color: black;
+    }
+    .css-ltfnpr {
+        color: black;
+    }
     </style>
     """,
     unsafe_allow_html=True,
