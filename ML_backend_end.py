@@ -47,7 +47,11 @@ x = ipdata.drop(columns=['ProtocolName', 'Fwd.Packet.Length.Std', 'Bwd.Packet.Le
 y = ipdata['ProtocolName']
 print(ipdata.shape)
 
-print(x.columns)
+print("Features considered:")
+for i in x.columns:
+    print(i)
+print("\nFeatures to Predict:\nProtocolName")
+
 
 x_train, x_test, y_train, y_test = train_test_split(
     x, y, test_size=0.2, random_state=3)
