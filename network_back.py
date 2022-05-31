@@ -9,6 +9,8 @@ with zipfile.ZipFile('Dataset-Unicauca-Version2-87Atts.zip') as zip:
     with zip.open('Dataset-Unicauca-Version2-87Atts.csv') as myZip:
         data = pd.read_csv(myZip)
 
+data.dropna(inplace=True)
+
 
 # get non numeric columns
 non_num_cols = [col for col in data.columns if data[col].dtype == 'O']
