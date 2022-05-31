@@ -103,3 +103,5 @@ st.image("./analysis/correlation_matrix.png")
 
 # Network Graph
 st.image("./analysis/Graph (3).png", caption="Kamada Kawai Graph model")
+st.write("Force-directed graph algorithms are a class of algorithms for visual graph alignment. Their purpose is to position the nodes of a graph in two-dimensional or three-dimensional space so that all the edges are of more or less equal length and there are as few crossing edges as possible, by assigning forces among the set of edges and the set of nodes, based on their relative positions, and then using these forces either to simulate the motion of the edges and nodes or to minimize their energy.")
+st.write("The Kamada-Kawai method assumes that the n vertices in an on-screen graph are connected by springs. The graph becomes a dynamical system that tries to reach a minimum-energy state, where springs are, as much as possible, not stretched or compressed overmuch from their “relaxed-state length”.")
