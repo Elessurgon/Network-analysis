@@ -89,6 +89,8 @@ all_files = os.listdir("./analysis")
 csv_files = list(filter(lambda f: f.endswith('.csv'), all_files))
 
 for col in csv_files:
+    if col in ('Summary_of_Label_column.csv', 'Summary_of_Flow.ID_column.csv', 'Summary_of_Timestamp_column.csv'):
+        continue
     st.write(f"Summary of {col} column")
     df = pd.read_csv("./analysis/" + col)
     st.dataframe(df)
@@ -97,11 +99,27 @@ for col in csv_files:
 # histogram
 st.image("./analysis/hist.png")
 
-# # correlation matrix
+# distribution
+st.image("./analysis/distri.png")
 
+# correlation matrix
 st.image("./analysis/correlation_matrix.png")
+
+# importance features
+st.image("./analysis/imp.png")
+
 
 # Network Graph
 st.image("./analysis/Graph (3).png", caption="Kamada Kawai Graph model")
 st.write("Force-directed graph algorithms are a class of algorithms for visual graph alignment. Their purpose is to position the nodes of a graph in two-dimensional or three-dimensional space so that all the edges are of more or less equal length and there are as few crossing edges as possible, by assigning forces among the set of edges and the set of nodes, based on their relative positions, and then using these forces either to simulate the motion of the edges and nodes or to minimize their energy.")
 st.write("The Kamada-Kawai method assumes that the n vertices in an on-screen graph are connected by springs. The graph becomes a dynamical system that tries to reach a minimum-energy state, where springs are, as much as possible, not stretched or compressed overmuch from their “relaxed-state length”.")
+
+details = {
+    'Decision Tree': './analysis/CMDT.png',
+    'K-nearest Neighbours': './analysis/CMKN.png',
+    'Naive Bayes': './analysis/CMNB.png',
+    'Logistic Regression': './analysis/CMLR.png',
+}
+
+for k, v in details.items():
+    st.image(v, caption=k)
