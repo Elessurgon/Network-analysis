@@ -5,4 +5,3 @@ pandas==1.4.2
 scikit_learn==1.1.1
 streamlit==1.8.1
 xgboost==0.90
-protobuf~=3.19.0
